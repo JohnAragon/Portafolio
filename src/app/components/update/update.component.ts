@@ -7,7 +7,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-edit',
-  templateUrl: '../create/create.component.html',
+  templateUrl: './update.component.html',
   styleUrls: ['./update.component.css'],
   providers: [ProjectService, UploadService]
 })
@@ -49,7 +49,7 @@ export class UpdateComponent implements OnInit {
   	)
   }
 
-  onSubmit(){
+  onSubmit(form){
   	this._projectService.updateProject(this.project).subscribe(
 		response => {
   			if(response.project){
